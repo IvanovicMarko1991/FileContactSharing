@@ -17,7 +17,7 @@ class ContactsController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::paginate(10);
+        $contacts=Contact::paginate(10);
 
         return view('contacts.contacts')->with('contacts', $contacts);
     }
@@ -40,12 +40,9 @@ class ContactsController extends Controller
      */
     public function store(Request $request)
     {
-
-     
-        
         $this->validate($request, [
             'name' => 'nullable',
-            'email ' => ' required | email | max : 255 | unique :users'
+            'email' => 'required'
         ]);
 
         $contact = new Contact;
@@ -87,18 +84,12 @@ class ContactsController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-         $customMessage=[
-            'required' => 'This email has already been taken !'
-        ];
-        
         $this->validate($request,[
             'name' => 'nullable',
-             'email ' => ' required | email | max : 255 | unique :users'
-        ], $customMessage);
+            'email'=> 'required'
+        ]);
 
-
-       
+        
 
         $contact=Contact::find($id);
         $contact->name=$request->input('name');
@@ -117,7 +108,7 @@ class ContactsController extends Controller
      */
     public function destroy($id)
     {
-        $contac = Contact::find($id);
+        $contact=Contact::find($id);
         $contact->delete();
         return redirect()->back()->with('success', 'Contact deleted !');
     }
