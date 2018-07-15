@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class PagesController extends Controller
+{
+    public function index(){
+        return view('index');
+    }
+    public function contacts(){
+        return view('contacts.contacts');
+    }
+
+    public function files(){
+        return view('files.files');
+    }
+}
