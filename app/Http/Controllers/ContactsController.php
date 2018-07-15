@@ -31,7 +31,7 @@ class ContactsController extends Controller
     {
          $this->validate($request, [
             'name' => 'nullable',
-            'email' => 'required'
+            'email' => 'required|unique:contacts'
         ]);
 
         $contact = new Contact;
@@ -89,7 +89,7 @@ class ContactsController extends Controller
     {
         $this->validate($request, [
             'name' => 'nullable',
-            'email' => 'required'
+            'email' => 'required|unique:contacts'
         ]);
    
         
