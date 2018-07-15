@@ -41,14 +41,12 @@ class ContactsController extends Controller
     public function store(Request $request)
     {
 
-        $customMessage = [
-            'required' => 'This email has already been taken !'
-        ];
+     
         
         $this->validate($request, [
             'name' => 'nullable',
             'email ' => ' required | email | max : 255 | unique :users'
-        ], $customMessage);
+        ]);
 
         $contact = new Contact;
         $contact->name = $request->input('name');
