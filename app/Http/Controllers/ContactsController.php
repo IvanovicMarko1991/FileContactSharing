@@ -29,17 +29,6 @@ class ContactsController extends Controller
      */
     public function create()
     {
-        
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
         $this->validate($request, [
             'name' => 'nullable',
             'email' => 'required'
@@ -50,6 +39,17 @@ class ContactsController extends Controller
         $contact->email = $request->input('email');
         $contact->save();
         return redirect()->back()->with('success', 'Contact created!');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        
     }
     
 
