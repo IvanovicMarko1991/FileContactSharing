@@ -98,7 +98,7 @@ class ContactsController extends Controller
         $contact->email = $request->input('email');
       
         $contact->save();
-
+        
         return redirect()->back()->with('success', 'Contact edited');
     }
 
