@@ -10,7 +10,7 @@
       </div>
       <div class="modal-body">
 
-        {!! Form::open(['action' => 'ContactsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+        {!! Form::open(['action' => 'ContactsController@create', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
         <div class="form-group">
           {{ Form::label('name', 'Name')}} {{Form::text('name', '', ['class'=> 'form-control', 'placeholder' => 'Name'])}}
         </div>
