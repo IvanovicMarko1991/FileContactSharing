@@ -29,7 +29,7 @@ class ContactsController extends Controller
      */
     public function create(Request $request)
     {
-        $this->validate($request, [
+         $this->validate($request, [
             'name' => 'nullable',
             'email' => 'required'
         ]);
@@ -49,7 +49,10 @@ class ContactsController extends Controller
      */
     public function store(Request $request)
     {
+
         
+
+       
     }
     
 
@@ -84,23 +87,22 @@ class ContactsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'name' => 'nullable',
-            'email'=> 'required'
+            'email' => 'required'
         ]);
-
+   
         
-
-        $contact=Contact::find($id);
-        $contact->name=$request->input('name');
-        $contact->email=$request->input('email');
-        
+        $contact = Contact::find($id);
+        $contact->name = $request->input('name');
+        $contact->email = $request->input('email');
+      
         $contact->save();
-        
+
         return redirect()->back()->with('success', 'Contact edited');
     }
 
-    /**
+    /**W
      * Remove the specified resource from storage.
      *
      * @param  int  $id
