@@ -31,7 +31,7 @@ Route::get('/contacts','ContactsController@index');
 
 
 Route::post('contacts/contacts',[
-    'uses' => 'ContactsController@store',
+    'uses' => 'ContactsController@create',
       'as'=>'store'  ]);
 
 Route::put('contacts/contacts{id}',[
