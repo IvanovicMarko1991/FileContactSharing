@@ -56,8 +56,3 @@ Route::delete('contacts/contacts{id}', [
         'as'=> 'update'
     ]);
 
-    Route::delete('files/files{id}',[
-        'uses' => 'FilesController@destroy',
-        'as' => 'destroy'
-    ]);
-
