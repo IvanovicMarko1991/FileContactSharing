@@ -89,8 +89,14 @@ class ContactsController extends Controller
     {
         $this->validate($request, [
             'name' => 'nullable',
-            'email' => 'required|unique:contacts'
+            'email' => [
+                'required',
+                'email',
+                Rule::unique('contacts')->ignore($id),
+            ]
+      
         ]);
+   
    
         
         $contact = Contact::find($id);
