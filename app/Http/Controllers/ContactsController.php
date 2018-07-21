@@ -38,7 +38,7 @@ class ContactsController extends Controller
         $contact->name = $request->input('name');
         $contact->email = $request->input('email');
         $contact->save();
-        return redirect()->back()->with('success', 'Contact created!');
+        return back()->with('success', 'Contact created');
     }
 
     /**
@@ -105,7 +105,7 @@ class ContactsController extends Controller
       
         $contact->save();
         
-        return redirect()->back()->with('success', 'Contact edited');
+        return back()->with('success', 'Contact edited');
     }
 
     /**W
